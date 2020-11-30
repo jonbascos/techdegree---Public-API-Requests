@@ -53,8 +53,8 @@ const displayModal = (data) => {
         cards[i].addEventListener('click', e => {
             // Stores the grandparent of the item clicked
             const parent = e.target.parentNode.parentNode
-            
-            if(e.target.innerText === cards[i].innerText || parent.className ==='card' || parent.className === 'card-info-container') {
+
+            if(parent.className ==='card' || parent.className === 'card-info-container') {
                 const birthday = data[i].dob.date
                 const convertedDOB = `${birthday.slice(5,7)}/${birthday.slice(8,10)}/${birthday.slice(0,4)}`
                 const modalContainerDiv = document.createElement('div')
