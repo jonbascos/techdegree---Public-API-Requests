@@ -1,7 +1,6 @@
 // FETCH Code
 
 fetch('https://randomuser.me/api/?results=12&nat=us')
-    .then(console.log('Fetching...'))
     .then(res => res.json())
     .then(data => {
         displayInfo(data.results)
@@ -12,7 +11,6 @@ fetch('https://randomuser.me/api/?results=12&nat=us')
 
 const displayInfo = (data) => {
 
-    console.log('from displayInfo: ', data)
     for(let i = 0; i < data.length; i++) {
         const galleryDiv = document.querySelector('#gallery')
         const cardDiv = document.createElement('div')
@@ -45,11 +43,11 @@ const displayInfo = (data) => {
     }
 }
 
+
+// Display the modal after clicking on a profile
 const displayModal = (data) => {
     const body = document.querySelector('body')
     let cards = document.querySelectorAll('.card')
-    console.log('from modal: ', cards[0].innerText)
-    console.log(cards.length)
     for(let i = 0; i < cards.length; i++) {
         cards[i].addEventListener('click', e => {
             if(e.target.innerText === cards[i].innerText) {
